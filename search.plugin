@@ -2,14 +2,9 @@
 #!desc=Safari Search Add-ons, modified from 🐩️哥 (https://raw.githubusercontent.com/Neurogram-R/Surge/master/module/Q-Search.sgmodule)
 
 [Script]
-# dlc xxx (DeepL 译至中)
-DeepLtoChinese = type=http-request,pattern=^https:\/\/duckduckgo.com\/\?q=dlc(\+|%20)([^&]+).+,script-path=https://raw.githubusercontent.com/zZPiglet/Task/master/asset/DeepLQ-search.js
-
-# dle xxx (DeepL 译至英)
-DeepLtoEnglish = type=http-request,pattern=^https:\/\/duckduckgo.com\/\?q=dle(\+|%20)([^&]+).+,script-path=https://raw.githubusercontent.com/zZPiglet/Task/master/asset/DeepLQ-search.js
-
-# dlj xxx (DeepL 译至日)
-DeepLtoJapanese = type=http-request,pattern=^https:\/\/duckduckgo.com\/\?q=dlj(\+|%20)([^&]+).+,script-path=https://raw.githubusercontent.com/zZPiglet/Task/master/asset/DeepLQ-search.js
+http-request ^https:\/\/duckduckgo.com\/\?q=dlj(\+|%20)([^&]+).+ script-path=https://raw.githubusercontent.com/zZPiglet/Task/master/asset/DeepLQ-search.js, timeout=10, tag=DeepLtoJapanese
+http-request ^https:\/\/duckduckgo.com\/\?q=dle(\+|%20)([^&]+).+ script-path=https://raw.githubusercontent.com/zZPiglet/Task/master/asset/DeepLQ-search.js, timeout=10, tag=DeepLtoEnglish
+http-request ^https:\/\/duckduckgo.com\/\?q=dlc(\+|%20)([^&]+).+ script-path=https://raw.githubusercontent.com/zZPiglet/Task/master/asset/DeepLQ-search.js, timeout=10, tag=DeepLtoChinese
 
 
 [URL Rewrite]
